@@ -9,5 +9,13 @@ Ejecutar los siguientes comandos para preparar el ambiente donde se ejecutara la
 ```
 python3 -m venv venv
 source venv/bin/activate
-pip3 install Flask
+pip3 install -r requirements.txt
 ```
+
+# Ejecutar la aplicación
+
+```
+export FLASK_APP=main.py 
+flask run --host=0.0.0.0
+```
+
