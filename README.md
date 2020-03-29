@@ -15,7 +15,12 @@ pip3 install -r requirements.txt
 # Ejecutar la aplicación
 
 ```
-export FLASK_APP=main.py 
+export FLASK_APP=main.py FLASK_DEBUG=1
 flask run --host=0.0.0.0
 ```
 
+---
+
+# Notas para el programador
+
+* Si se hacen cambios en los campos que se monitorean, se debe cambiar el archivo `fields.py` y la función `findCountryData` debe considerar el nuevo campo para ingresarlo en el diccionario devuelto como respuesta.
