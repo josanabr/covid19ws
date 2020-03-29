@@ -1,17 +1,13 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 #
-# Script de prueba
+# Script tomado de https://flask.palletsprojects.com/en/1.1.x/quickstart/
 #
-from fastapi import FastAPI
+# Author: John Sanabria - john.sanabria@correounivalle.edu.co
+# Date: 2020-03-28
+#
+from flask import Flask
+app = Flask(__name__)
 
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
