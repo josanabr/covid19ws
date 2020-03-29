@@ -9,7 +9,7 @@ from flask import Flask, request
 from flask_restplus import Api, Resource, fields
 from time import gmtime, strftime
 import constant # constantes de este proyecto
-import fields # campos monitoreados
+import myfields # campos monitoreados
 import time
 import subprocess
 
@@ -33,18 +33,18 @@ def findCountryData(country):
 	dictio = {}
 	dictio['GMT time'] = time.strftime("%a, %d %b %Y %I:%M:%S %p %Z", time.gmtime())
 	dictio['Server time'] = strftime("%a, %d %b %Y %I:%M:%S %p %Z")
-	dictio[fields.STDATETIME] = output[fields.DATETIME]
-	dictio[fields.STCOUNTRY] = output[fields.COUNTRY]
-	dictio[fields.STTCASES] = output[fields.TCASES]
-	dictio[fields.STNCASES] = output[fields.NCASES]
-	dictio[fields.STTDEATHS] = output[fields.TDEATHS]
-	dictio[fields.STNDEATHS] = output[fields.NDEATHS]
-	dictio[fields.STTRECOVERED] = output[fields.TRECOVERED]
-	dictio[fields.STACASES] = output[fields.ACASES]
-	dictio[fields.STSCRITICAL] = output[fields.SCRITICAL]
-	dictio[fields.STCASEXMILLION] = output[fields.CASEXMILLION]
-	dictio[fields.STDEATHSXMILLION] = output[fields.DEATHSXMILLION]
-	dictio[fields.STFSTCASE] = output[fields.FSTCASE]
+	dictio[myfields.STDATETIME] = output[myfields.DATETIME]
+	dictio[myfields.STCOUNTRY] = output[myfields.COUNTRY]
+	dictio[myfields.STTCASES] = output[myfields.TCASES]
+	dictio[myfields.STNCASES] = output[myfields.NCASES]
+	dictio[myfields.STTDEATHS] = output[myfields.TDEATHS]
+	dictio[myfields.STNDEATHS] = output[myfields.NDEATHS]
+	dictio[myfields.STTRECOVERED] = output[myfields.TRECOVERED]
+	dictio[myfields.STACASES] = output[myfields.ACASES]
+	dictio[myfields.STSCRITICAL] = output[myfields.SCRITICAL]
+	dictio[myfields.STCASEXMILLION] = output[myfields.CASEXMILLION]
+	dictio[myfields.STDEATHSXMILLION] = output[myfields.DEATHSXMILLION]
+	dictio[myfields.STFSTCASE] = output[myfields.FSTCASE]
 
 	return dictio
 
